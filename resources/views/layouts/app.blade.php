@@ -14,13 +14,13 @@
         @vite(['resources/css/app.css','resources/js/app.js'])
     </head>
     <body>
-        @include('layouts.navigation')
+        @include('includes.navigation')
 
-        @include('layouts.header')
+        @include('includes.header')
 
         @yield('content')
 
-        @include('layouts.footer')
+        @include('includes.footer')
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
