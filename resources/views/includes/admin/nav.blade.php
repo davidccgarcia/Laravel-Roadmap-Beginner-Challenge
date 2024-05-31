@@ -16,24 +16,10 @@
                 </a>
             </div>
             <div class="flex items-center">
-
-                <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                    <ul class="font-medium flex flex-col p-2 md:p-0 rounded-lg bg-gray-50 md:flex-row md:space-x-2">
-                        <li>
-                            <a href="{{ route('home') }}" class="block py-2 px-3 {{ request()->is('/') ? 'text-blue-700' : 'text-gray-900' }} rounded md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('about') }}" class="block py-2 px-3 {{ request()->is('about') ? 'text-blue-700' : 'text-gray-900' }} rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('login') }}" class="block py-2 px-3 {{ request()->is('login') ? 'text-blue-700' : 'text-gray-900' }} rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Log In</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <button id="toggleSidebarMobileSearch" type="button" class="p-2 text-gray-500 rounded-lg lg:hidden hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"></button>
-
                 @auth
+                    <button id="toggleSidebarMobileSearch" type="button" class="p-2 text-gray-500 rounded-lg lg:hidden hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"></button>
+
+                
                     <button type="button" data-dropdown-toggle="notification-dropdown" class="p-2 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700">
                         <span class="sr-only">View notifications</span>
 
@@ -165,6 +151,20 @@
                                 </li>
                             </ul>
                         </div>
+                    </div>
+                @else
+                    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                        <ul class="font-medium flex flex-col p-2 md:p-0 rounded-lg bg-gray-50 md:flex-row md:space-x-2">
+                            <li>
+                                <a href="{{ route('home') }}" class="block py-2 px-3 {{ request()->is('/') ? 'text-blue-700' : 'text-gray-900' }} rounded md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('about') }}" class="block py-2 px-3 {{ request()->is('about') ? 'text-blue-700' : 'text-gray-900' }} rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('login') }}" class="block py-2 px-3 {{ request()->is('login') ? 'text-blue-700' : 'text-gray-900' }} rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Log In</a>
+                            </li>
+                        </ul>
                     </div>
                 @endauth
             </div>
