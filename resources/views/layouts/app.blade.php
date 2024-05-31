@@ -10,6 +10,8 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('assets/favicon.ico') }}" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+
+        @vite(['resources/css/app.css','resources/js/app.js'])
     </head>
     <body>
         @include('layouts.navigation')
