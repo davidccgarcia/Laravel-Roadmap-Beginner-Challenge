@@ -25,9 +25,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::group(['prefix' => 'admin'], function () {
-        Route::resource('categories', App\Http\Controllers\Admin\CategoryController::class)->names('admin.categories');
-        Route::resource('tags', App\Http\Controllers\Admin\TagController::class)->names('admin.tags');
-        Route::resource('posts', App\Http\Controllers\Admin\PostController::class)->names('admin.posts');
+        Route::resource('categories', App\Http\Controllers\Admin\CategoryController::class)->except('show')->names('admin.categories');
+        Route::resource('tags', App\Http\Controllers\Admin\TagController::class)->except('show')->names('admin.tags');
+        Route::resource('posts', App\Http\Controllers\Admin\PostController::class)->except('show')->names('admin.posts');
     });
 });
 
