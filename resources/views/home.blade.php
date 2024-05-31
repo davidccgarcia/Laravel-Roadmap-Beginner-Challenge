@@ -2,7 +2,7 @@
 
 @section('header-title', 'Welcome to Blog Home!')
 
-@section('header-content', 'A Bootstrap 5 starter layout for your next blog homepage')
+@section('header-content', 'A Tailwind CSS starter layout for your next blog homepage')
 
 @section('content')
     <div class="container">

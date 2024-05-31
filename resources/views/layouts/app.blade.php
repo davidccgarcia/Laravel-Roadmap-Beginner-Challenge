@@ -12,18 +12,22 @@
         <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
 
         @vite(['resources/css/app.css','resources/js/app.js'])
+        <script>
+            // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark')
+            }
+        </script>
     </head>
     <body>
-        @include('includes.navigation')
+        @include('includes.admin.nav')
 
         @include('includes.header')
 
         @yield('content')
 
         @include('includes.footer')
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="{{ asset('js/scripts.js') }}"></script>
     </body>
 </html>
