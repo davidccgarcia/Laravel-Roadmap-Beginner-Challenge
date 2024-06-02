@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'home')->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
+Route::get('post/{post}', [App\Http\Controllers\HomeController::class, 'show'])->name('post.show');
 Route::view('/about', 'about')->name('about');
 
 Route::middleware(['auth', 'verified'])->group(function () {
